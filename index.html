@@ -12,6 +12,10 @@ async function uploadImage() {
       body: formData
     });
 
+    console.log('Response Status:', response.status);
+    console.log('Response Headers:', response.headers);
+
+    // Check if response is not OK
     if (!response.ok) {
       const errorText = await response.text();
       console.error('API Error:', errorText);
@@ -32,4 +36,3 @@ async function uploadImage() {
     alert('Something went wrong. Check the console for details.');
   }
 }
-
